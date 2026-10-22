@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cute Dino Site</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1 class="logo">Cute Dinos</h1>
+    <nav>
+      <button id="themeToggle" class="btn small">Toggle Theme</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <!-- Inline SVG dinosaur background -->
+      <div class="dino-scene" aria-hidden="true">
+        <svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#a6f0ff" />
+              <stop offset="100%" stop-color="#cfefff" />
+            </linearGradient>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#sky)" />
+          <g class="dinos">
+            <g class="dino" transform="translate(80,220)">
+              <ellipse cx="120" cy="70" rx="120" ry="70" fill="#8ad0a8" />
+              <circle cx="40" cy="40" r="28" fill="#8ad0a8" />
+              <circle cx="60" cy="25" r="8" fill="#fff" />
+              <circle cx="58" cy="24" r="3" fill="#333" />
+              <rect x="170" y="40" width="90" height="28" rx="14" fill="#8ad0a8" transform="rotate(-8 170 40)" />
+              <g class="spikes" fill="#57b07a">
+                <polygon points="30,10 50,-20 70,10" />
+                <polygon points="80,0 100,-30 120,0" />
+                <polygon points="130,10 150,-20 170,10" />
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="hero-content">
+        <h2>Welcome to the cutest dino corner!</h2>
+        <p>Fun facts, little activities, and a cozy dino background.</p>
+        <div class="controls">
+          <button id="factBtn" class="btn">Random Dino Fact</button>
+          <button id="showGallery" class="btn outline">Toggle Gallery</button>
+        </div>
+        <p id="factText" class="fact"></p>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery hidden">
+      <h3>Dino Gallery</h3>
+      <div class="cards">
+        <div class="card">🌿 Dino Nap</div>
+        <div class="card">🦴 Dino Snack</div>
+        <div class="card">🎈 Dino Party</div>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h3>Say Hi</h3>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <textarea id="message" rows="4" placeholder="Message"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+      <p id="contactStatus" class="muted"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>Made with dino-love 🦕</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
